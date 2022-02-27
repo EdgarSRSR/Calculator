@@ -11,9 +11,9 @@ new Function evaluating to a string, also has potential pitfalls of evaluating i
 Create a Calculator </br>
 Create functions for: </br>
 1. add</br>
-2.substract</br>
-3.multiply</br>
-4.divide</br>
+2. substract</br>
+3. multiply</br>
+4. divide</br>
 
 Create a new function operate that takes an operator and 2 numbers and calls one of the functions mentioned above</br>
 
@@ -25,7 +25,7 @@ The number recorded on when the user presses a button should be stored, and save
 
 Once operate() is pressed, update the display with the solution.</br>
 
-To do this, it is needed to figure out hot to store all the values and call the operate function with them. THIS IS HARD TO GIGURE OUT</br>
+To do this, it is needed to figure out hot to store all the values and call the operate function with them. THIS IS HARD TO FIGURE OUT</br>
 
 Round answers with long decimals</br>
 
