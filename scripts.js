@@ -15,18 +15,9 @@
  se hacen if de acuerdo con los operadores, ejemplo if array[i] == '+' y adentro de los if se hacen las operaciones necesarias
  al final se regresa el resultado.
 **/
-// let wrapper = document.getElementById('wrapper');
+const container = document.querySelector("#container");
 
-// wrapper.addEventListener('click', (e) =>{
-//   let buttonClicked = e.target.nodeName === 'BUTTON';
-//   if(!buttonClicked){
-//     return;
-//   }
-
-//   console.log(e.target.value);
-// })
-
- const operation = [];
+const operation = [];
 
 
 //alert("SEGAAAA");
@@ -40,11 +31,20 @@ buttons.forEach((button) => {
 
   // and for each one we add a 'click' listener
   button.addEventListener('click', () => {
-    alert(button.id);
+    //alert(button.id);
     operation.push(button.id);
+    container.appendChild(createText(button.id));
+
     console.log(operation);
   });
 });
+
+function createText(text){
+  const p = document.createElement('p');
+  p.classList.add('p');
+  p.textContent = text;
+  return p;
+}
 
 
 
