@@ -15,4 +15,19 @@
  se hacen if de acuerdo con los operadores, ejemplo if array[i] == '+' y adentro de los if se hacen las operaciones necesarias
  al final se regresa el resultado.
 **/
+// let wrapper = document.getElementById('wrapper');
+
+// wrapper.addEventListener('click', (e) =>{
+//   let buttonClicked = e.target.nodeName === 'BUTTON';
+//   if(!buttonClicked){
+//     return;
+//   }
+
+//   console.log(e.target.value);
+// })
+
+// const operation = [];
+
+var number = new Object();
+
 
