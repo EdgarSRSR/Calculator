@@ -32,8 +32,12 @@ buttons.forEach((button) => {
   // and for each one we add a 'click' listener
   button.addEventListener('click', () => {
     //alert(button.id);
+    /*if(container.hasChildNodes()){
+      container.removeChild('p');
+    }*/
     operation.push(button.id);
-    container.appendChild(createText(button.id));
+    container.textContent = button.id
+    //container.appendChild(createText(button.id));
 
     console.log(operation);
   });
