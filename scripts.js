@@ -36,9 +36,9 @@ buttons.forEach((button) => {
       container.removeChild('p');
     }*/
     operation.push(button.id);
-    container.textContent = button.id
+    //container.textContent = button.id;
+    container.textContent = operation.join('');
     //container.appendChild(createText(button.id));
-
     console.log(operation);
   });
 });
@@ -50,5 +50,31 @@ function createText(text){
   return p;
 }
 
+const deleteBtn = document.querySelector('.delete');
+deleteBtn.addEventListener('click', function(){
+  operation.length = 0;
+  container.textContent = '';
+});
 
+const equal = document.querySelector('.equal');
+equal.addEventListener('click', function(){
+
+  let operationString = operation.join('');
+  let operationNumbers = splitMulti(operationString, ['-','+','%','x']); 
+  console.log(operationString);
+  console.log(operationNumbers)
+  alert(operationString);
+  //alert(operationNumbers);
+  
+});
+
+// to splice by operand
+function splitMulti(str, tokens){
+  var tempChar = tokens[0]; // We can use the first token as a temporary join character
+  for(var i = 1; i < tokens.length; i++){
+      str = str.split(tokens[i]).join(tempChar);
+  }
+  str = str.split(tempChar);
+  return str;
+}
 
