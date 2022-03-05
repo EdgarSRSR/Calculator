@@ -26,8 +26,25 @@
 //   console.log(e.target.value);
 // })
 
-// const operation = [];
+ const operation = [];
 
-var number = new Object();
+
+//alert("SEGAAAA");
+
+var operations = ' ';
+
+const buttons = document.querySelectorAll('button');
+
+// we use the .forEach method to iterate through each button
+buttons.forEach((button) => {
+
+  // and for each one we add a 'click' listener
+  button.addEventListener('click', () => {
+    alert(button.id);
+    operation.push(button.id);
+    console.log(operation);
+  });
+});
+
 
 
