@@ -50,12 +50,14 @@ function createText(text){
   return p;
 }
 
+//code for delete button
 const deleteBtn = document.querySelector('.delete');
 deleteBtn.addEventListener('click', function(){
   operation.length = 0;
   container.textContent = '';
 });
 
+// code for equal button
 const equal = document.querySelector('.equal');
 equal.addEventListener('click', function(){
 
@@ -77,4 +79,8 @@ function splitMulti(str, tokens){
   str = str.split(tempChar);
   return str;
 }
+
+// code for cancel button
+const cancelBtn = document.querySelector('');
+
 
