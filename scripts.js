@@ -66,6 +66,9 @@ equal.addEventListener('click', function(){
   // erases the operation array and the display
   operation.length = 0;
   container.textContent = '';
+  let solution = operate(operationNumbers, operationOperators)
+  console.log(solution);
+  container.textContent = solution;
 });
 
 // to splice by operand
@@ -88,7 +91,27 @@ cancelBtn.addEventListener('click', function(){
 });
 
 // takes an operator and 2 numbers and call one of the operator functions
-function operate(){}
+function operate(digits,operators){
+
+  for(let i of operators){
+    if(i === '+'){
+      add(digits[0], digits[1]);
+    } else if(i === '-'){
+      substract(digits[0], digits[1]);
+    } else if(i === 'x'){
+      multiply(digits[0], digits[1]);
+    } else if(i === '%'){
+      divide(digits[0], digits[1]);
+    } else if(i === ''){
+      operators.splice(i, 1);
+      continue;
+    }
+  }
+
+}
+
+
+//operate(['2','2'],['','+',''])
 
 // operator functions:
 
