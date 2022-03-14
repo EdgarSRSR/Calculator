@@ -98,13 +98,13 @@ function operate(digits,operators){
         operators.splice(i,1);
         continue
       }else if(i === '+'){
-        return add(parseInt(digits[0]), parseInt(digits[1]));
+        return add(parseFloat(digits[0]), parseFloat(digits[1]));
       } else if(i === '-'){
-        return substract(parseInt(digits[0]), parseInt(digits[1]));
+        return substract(parseFloat(digits[0]), parseFloat(digits[1]));
       } else if(i === 'x'){
-        return multiply(parseInt(digits[0]), parseInt(digits[1]));
+        return multiply(parseFloat(digits[0]), parseFloat(digits[1]));
       } else if(i === '%'){
-        return divide(parseInt(digits[0]), parseInt(digits[1]));
+        return divide(parseFloat(digits[0]), parseFloat(digits[1]));
       } 
    }
 
