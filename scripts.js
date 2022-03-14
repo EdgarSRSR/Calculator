@@ -19,26 +19,17 @@ const container = document.querySelector("#container");
 
 const operation = [];
 
-
-//alert("SEGAAAA");
-
 var operations = ' ';
 
 const buttons = document.querySelectorAll('button');
 
-// we use the .forEach method to iterate through each button
+// we use the forEach method to iterate through each button
 buttons.forEach((button) => {
 
   // and for each one we add a 'click' listener
   button.addEventListener('click', () => {
-    //alert(button.id);
-    /*if(container.hasChildNodes()){
-      container.removeChild('p');
-    }*/
     operation.push(button.id);
-    //container.textContent = button.id;
     container.textContent = operation.join('');
-    //container.appendChild(createText(button.id));
     console.log(operation);
   });
 });
@@ -60,14 +51,11 @@ deleteBtn.addEventListener('click', function(){
 // code for equal button
 const equal = document.querySelector('.equal');
 equal.addEventListener('click', function(){
-
   let operationString = operation.join('');
-  let operationNumbers = splitMulti(operationString, ['-','+','%','x']); 
+  let operationNumbers = splitMulti(operationString, ['-','+','%','x']);  
   console.log(operationString);
   console.log(operationNumbers)
   alert(operationString);
-  //alert(operationNumbers);
-  
 });
 
 // to splice by operand
@@ -81,6 +69,12 @@ function splitMulti(str, tokens){
 }
 
 // code for cancel button
-const cancelBtn = document.querySelector('');
+const cancelBtn = document.querySelector('.cancel');
+cancelBtn.addEventListener('click', function(){
+  operation.pop();
+  operation.pop();
+  container.textContent = operation.join('');
+  console.log(operation);
+});
 
 
