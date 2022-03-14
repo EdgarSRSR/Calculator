@@ -124,7 +124,7 @@ function substract(a, b){
 }
 
 function multiply(a, b){
-  return a * b;
+  return Math.round(((a*b) + Number.EPSILON) * 100) / 100;
 }
 
 function divide(a, b){
@@ -148,18 +148,7 @@ function operateTwo(digits,operators){
     }
   }
 
-   if(operators.includes("x")){
-     while(operators.includes("x")){
-       let i = operators.indexOf("x");
-       solution = multiply(parseFloat(digits[i]), parseFloat(digits[i+1]));
-       digits[i] = solution;
-       digits.splice(i+1,1);
-       operators.splice(i,1);
-     }
-   }
-  
-
-   if(operators.includes("%")){
+     if(operators.includes("%")){
      while(operators.includes("%")){
        let i = operators.indexOf("%");
        solution = divide(parseFloat(digits[i]), parseFloat(digits[i+1]));
@@ -168,6 +157,16 @@ function operateTwo(digits,operators){
        operators.splice(i,1);
      }
    }
+
+   if(operators.includes("x")){
+    while(operators.includes("x")){
+      let i = operators.indexOf("x");
+      solution = multiply(parseFloat(digits[i]), parseFloat(digits[i+1]));
+      digits[i] = solution;
+      digits.splice(i+1,1);
+      operators.splice(i,1);
+    }
+  }
   
 
    if(operators.includes("+")){
