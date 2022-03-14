@@ -128,5 +128,10 @@ function multiply(a, b){
 }
 
 function divide(a, b){
-  return a / b;
+
+  if(b === 0){
+    return "ERROR"
+  }
+  return Math.round(((a/b) + Number.EPSILON) * 100) / 100;
+
 }
