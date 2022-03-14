@@ -62,10 +62,10 @@ equal.addEventListener('click', function(){
   console.log(operationNumbers)
   console.log("Array of only operators:");
   console.log(operationOperators);
-  alert(operationString);
   // erases the operation array and the display
   operation.length = 0;
   container.textContent = '';
+  //  calls for the operate function to do the math
   let solution = operate(operationNumbers, operationOperators)
   console.log(solution);
   container.textContent = solution;
@@ -94,19 +94,19 @@ cancelBtn.addEventListener('click', function(){
 function operate(digits,operators){
 
   for(let i of operators){
-    if(i === '+'){
-      add(digits[0], digits[1]);
-    } else if(i === '-'){
-      substract(digits[0], digits[1]);
-    } else if(i === 'x'){
-      multiply(digits[0], digits[1]);
-    } else if(i === '%'){
-      divide(digits[0], digits[1]);
-    } else if(i === ''){
-      operators.splice(i, 1);
-      continue;
-    }
-  }
+      if(i == null){
+        operators.splice(i,1);
+        continue
+      }else if(i === '+'){
+        return add(parseInt(digits[0]), parseInt(digits[1]));
+      } else if(i === '-'){
+        return substract(parseInt(digits[0]), parseInt(digits[1]));
+      } else if(i === 'x'){
+        return multiply(parseInt(digits[0]), parseInt(digits[1]));
+      } else if(i === '%'){
+        return divide(parseInt(digits[0]), parseInt(digits[1]));
+      } 
+   }
 
 }
 
@@ -128,5 +128,5 @@ function multiply(a, b){
 }
 
 function divide(a, b){
-  return a % b;
+  return a / b;
 }
