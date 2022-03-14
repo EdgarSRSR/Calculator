@@ -93,20 +93,20 @@ cancelBtn.addEventListener('click', function(){
 // takes an operator and 2 numbers and call one of the operator functions
 function operate(digits,operators){
 
-  for(let i of operators){
-      if(i == null){
-        operators.splice(i,1);
-        continue
-      }else if(i === '+'){
-        return add(parseFloat(digits[0]), parseFloat(digits[1]));
-      } else if(i === '-'){
-        return substract(parseFloat(digits[0]), parseFloat(digits[1]));
-      } else if(i === 'x'){
-        return multiply(parseFloat(digits[0]), parseFloat(digits[1]));
-      } else if(i === '%'){
-        return divide(parseFloat(digits[0]), parseFloat(digits[1]));
-      } 
-   }
+   for(let i of operators){
+       if(i == null){
+         operators.splice(i,1);
+         continue
+       }else if(i === '+'){
+         return add(parseFloat(digits[0]), parseFloat(digits[1]));
+       } else if(i === '-'){
+         return substract(parseFloat(digits[0]), parseFloat(digits[1]));
+       } else if(i === 'x'){
+         return multiply(parseFloat(digits[0]), parseFloat(digits[1]));
+       } else if(i === '%'){
+         return divide(parseFloat(digits[0]), parseFloat(digits[1]));
+       } 
+    }
 
 }
 
@@ -134,4 +134,8 @@ function divide(a, b){
   }
   return Math.round(((a/b) + Number.EPSILON) * 100) / 100;
 
+}
+
+function operatorTwo(digits,operators){
+  return "Segaaaa";
 }
