@@ -15,12 +15,17 @@
  se hacen if de acuerdo con los operadores, ejemplo if array[i] == '+' y adentro de los if se hacen las operaciones necesarias
  al final se regresa el resultado.
 **/
+
+// call the container of the display
 const container = document.querySelector("#container");
 
+// array for containing the numbers and operators
 const operation = [];
 
+// string for containing the numbers and operators from the array into a string
 var operations = ' ';
 
+// select the buttons in the calculator
 const buttons = document.querySelectorAll('button');
 
 // we use the forEach method to iterate through each button
@@ -28,20 +33,15 @@ buttons.forEach((button) => {
 
   // and for each one we add a 'click' listener
   button.addEventListener('click', () => {
+    // pushes the id of the button into the operation array
     operation.push(button.id);
+    // turning the operation array into string and showing it on the display
     container.textContent = operation.join('');
     console.log(operation);
   });
 });
 
-function createText(text){
-  const p = document.createElement('p');
-  p.classList.add('p');
-  p.textContent = text;
-  return p;
-}
-
-//code for delete button
+// code for delete button
 const deleteBtn = document.querySelector('.delete');
 deleteBtn.addEventListener('click', function(){
   operation.length = 0;
@@ -51,11 +51,21 @@ deleteBtn.addEventListener('click', function(){
 // code for equal button
 const equal = document.querySelector('.equal');
 equal.addEventListener('click', function(){
+
+  // string that made from the operation array with numbers and operators
   let operationString = operation.join('');
-  let operationNumbers = splitMulti(operationString, ['-','+','%','x']);  
-  console.log(operationString);
+  // creates an array with only the numbers, this allows for getting double numbers
+  let operationNumbers = splitMulti(operationString, ['-','+','%','x']);
+  let operationOperators = splitMulti(operationString, ['.', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']);  
+  console.log("String of the number and operators: " + operationString);
+  console.log("Array of only the numbers: ");
   console.log(operationNumbers)
+  console.log("Array of only operators:");
+  console.log(operationOperators);
   alert(operationString);
+  // erases the operation array and the display
+  operation.length = 0;
+  container.textContent = '';
 });
 
 // to splice by operand
@@ -77,4 +87,15 @@ cancelBtn.addEventListener('click', function(){
   console.log(operation);
 });
 
+// takes an operator and 2 numbers and call one of the operator functions
+function operate(){}
 
+// operator functions:
+
+function add(){}
+
+function substract(){}
+
+function multiply(){}
+
+function divide(){}
