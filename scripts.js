@@ -66,7 +66,7 @@ equal.addEventListener('click', function(){
   operation.length = 0;
   container.textContent = '';
   //  calls for the operate function to do the math
-  let solution = operate(operationNumbers, operationOperators)
+  let solution = operateTwo(operationNumbers, operationOperators)
   console.log(solution);
   container.textContent = solution;
 });
@@ -136,6 +136,60 @@ function divide(a, b){
 
 }
 
-function operatorTwo(digits,operators){
-  return "Segaaaa";
+
+// calculates a whole string of operations
+function operateTwo(digits,operators){
+  let solution;
+
+  if(operators.includes('')){
+    while(operators.includes('')){
+      let i = operators.indexOf('');
+      operators.splice(i,1);
+    }
+  }
+
+   if(operators.includes("x")){
+     while(operators.includes("x")){
+       let i = operators.indexOf("x");
+       solution = multiply(parseFloat(digits[i]), parseFloat(digits[i+1]));
+       digits[i] = solution;
+       digits.splice(i+1,1);
+       operators.splice(i,1);
+     }
+   }
+  
+
+   if(operators.includes("%")){
+     while(operators.includes("%")){
+       let i = operators.indexOf("%");
+       solution = divide(parseFloat(digits[i]), parseFloat(digits[i+1]));
+       digits[i] = solution;
+       digits.splice(i+1,1);
+       operators.splice(i,1);
+     }
+   }
+  
+
+   if(operators.includes("+")){
+     while(operators.includes("+")){
+       let i = operators.indexOf("+");
+       solution = add(parseFloat(digits[i]), parseFloat(digits[i+1]));
+       digits[i] = solution;
+       digits.splice(i+1,1);
+       operators.splice(i,1);
+     }
+   }
+  
+
+   if(operators.includes("-")){
+     while(operators.includes("-")){
+       let i = operators.indexOf("-");
+       solution = substract(parseFloat(digits[i]), parseFloat(digits[i+1]));
+       digits[i] = solution;
+       digits.splice(i+1,1);
+       operators.splice(i,1);
+     }
+   }
+ 
+  return digits;
 }
